@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :characters
+  resources :monsters
+  resources :teams
   get '/hello', to: 'application#hello_world'
 
   get '*path',
