@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :characters
+  resources :characters, only: [:index, :show]
   resources :monsters
   resources :teams
   get '/hello', to: 'application#hello_world'
