@@ -1,5 +1,6 @@
 class CharactersController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response 
+    rescue_from ActiveRecord::RecordInvalid, with: :render_invalid_response
 
     def index
         characters = Character.all 
@@ -7,7 +8,13 @@ class CharactersController < ApplicationController
     end
 
     def show 
-        character = Character.find_by!(id: params[:id])
+        character = find_character
+        render json: character, status: :ok
+    end
+
+    def update
+        character = find_character
+        character.update!(character_params)
         render json: character, status: :ok
     end
 
@@ -15,6 +22,18 @@ class CharactersController < ApplicationController
 
     def render_not_found_response
         render json: { error: "No kids located" }, status: :not_found
+    end
+
+    def find_character
+        Character.find_by!(id: params[:id])
+    end
+
+    def render_invalid_response (exception)
+        render json: { errors: exception.record.errors.full_messages }, status: :unprocessable_entity
+    end
+
+    def character_params
+        params.permit(:monster_id, :team_id)
     end
 
 end
