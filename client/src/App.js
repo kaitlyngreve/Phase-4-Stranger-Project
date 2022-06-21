@@ -7,6 +7,7 @@ import Login from "./Login";
 function App() {
   const [characters, setCharacters] = useState([])
   const [teams, setTeams] = useState([])
+  const [selectedTeam, setSelectedTeam] = useState({})
 
   useEffect(() => {
     fetch("/characters")
@@ -17,9 +18,16 @@ function App() {
   useEffect(() => {
     fetch("/teams")
       .then((r) => r.json())
-      .then((data) => setTeams(data));
+      .then((team) => setTeams(team));
   }, []);
 
+  const handleSelectedTeam = (team) => {
+    setSelectedTeam(team)
+  }
+
+  function handleChangeTeam(e) {
+    // console.log(e.target.value)
+  }
 
   return (
     <BrowserRouter>
@@ -32,7 +40,7 @@ function App() {
             <Login />
           </Route>
           <Route exact path="/characters">
-            <Characters characters={characters} teams={teams} />
+            <Characters characters={characters} teams={teams} handleChangeTeam={handleChangeTeam} />
           </Route>
           <Route exact path="/teams">
             <h1>Teams Count: </h1>
