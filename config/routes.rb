@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :characters, only: [:index, :show, :update]
-  resources :monsters
+  resources :monsters, only: [:index, :show, :destroy]
   resources :teams
+
   post '/signup', to: 'users#create'
   get '/me', to: 'users#show'
   post '/login', to: 'sessions#create'
