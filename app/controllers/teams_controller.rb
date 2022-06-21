@@ -16,13 +16,13 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_invalid_response
         team = Team.create!(team_params)
         render json: team, status: :created
     end
+    # probably don't need create for teams?
 
-    # def update
-    #     team = Team.find_by(id: params[:id])
-    #       team.update(team_params)
-    #     render json: team, status: :created
-    # end
-# probably don't need update for teams?
+    def update
+        team = Team.find_by(id: params[:id])
+          team.update!(team_params)
+        render json: team, status: :created
+    end
 
     def destroy
         team = Team.find_by!(id: params[:id])
@@ -41,6 +41,6 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_invalid_response
     end
 
     def team_params
-        params.permit(:team_name, :player_total)
+        params.permit(:team_name, :player_total, :team_strength)
     end
 end
