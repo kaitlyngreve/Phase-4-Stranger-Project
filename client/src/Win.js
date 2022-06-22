@@ -6,7 +6,7 @@ function Win() {
     return (
         <>
             <div>
-                <h1>YOU WON</h1>
+                <h1>YOU DEFEATED THE MONSTER</h1>
             </div>
         </>
     );
