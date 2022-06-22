@@ -8,6 +8,7 @@ function App() {
   const [characters, setCharacters] = useState([])
   const [teams, setTeams] = useState([])
   const [selectedTeam, setSelectedTeam] = useState({})
+  // console.log(teams)
 
   useEffect(() => {
     fetch("/characters")
@@ -21,13 +22,27 @@ function App() {
       .then((team) => setTeams(team));
   }, []);
 
-  const handleSelectedTeam = (team) => {
-    setSelectedTeam(team)
-  }
+  let character = characters.forEach((character) => character)
+  console.log(character)
+  console.log(characters)
 
   function handleChangeTeam(e) {
-    // console.log(e.target.value)
+    fetch(`/characters/${character.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(
+
+      ),
+    })
+      .then(r => r.json())
+      .then(data => console.log(data))
   }
+
+  // const handleSelectedTeam = (team) => {
+  //   // setSelectedTeam(team)
+  // }
 
   return (
     <BrowserRouter>

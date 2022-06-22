@@ -11,30 +11,28 @@ function Characters({ characters, teams, handleChangeTeam }) {
         return team.id
     })
 
-
     function handleClick(character) {
-        console.log(character.name)
+        console.log(character.id)
     }
 
-    function handleForm(e) { //how we will handle the form
-        // debugger
-        let value = '' //this will display whatever the topping value is which is below on line 57
-        if (e.target.value === 'Hellfire Club') {   //checking to see if the pizza that is being clicked on is veggie based on 
-            value = 'Hellfire Club'// value = e.target.value === 'Hellfire Club'  //radio button. so if true then the value returned will be 'e.target.value' which will be Vegetarian caps
+    function handleForm(e) {
+        let value = ''
+        if (e.target.value === 'Hellfire Club') {
+            value = 'Hellfire Club'
         }
-        else if (e.target.value === 'Scoops Ahoy') {   //checking to see if the pizza that is being clicked on is veggie based on 
-            value = 'Scoops Ahoy' //radio button. so if true then the value returned will be 'e.target.value' which will be Vegetarian caps
+        else if (e.target.value === 'Scoops Ahoy') {
+            value = 'Scoops Ahoy'
         }
-        else if (e.target.value === 'Starcourt') {   //checking to see if the pizza that is being clicked on is veggie based on 
-            value = 'Starcourt'  //radio button. so if true then the value returned will be 'e.target.value' which will be Vegetarian caps
+        else if (e.target.value === 'Starcourt') {
+            value = 'Starcourt'
         }
-        else if (e.target.value === 'Hawkins High') {   //checking to see if the pizza that is being clicked on is veggie based on 
-            value = 'Hawkins High'  //radio button. so if true then the value returned will be 'e.target.value be 'e.target.value' which will be Vegetarian caps
+        else if (e.target.value === 'Hawkins High') {
+            value = 'Hawkins High'
         }
-        handleChangeTeam(e.target.value, value) //The handlechangetopping will display the name of the pizza selected in the form as editable
-    }   //the form will display the pizza topping, the size, and the veggie or not radio according to selected
+        handleChangeTeam(e.target.value, value)
+    }
 
-    // console.log("new log:", team.team_name)
+
 
 
     return (
