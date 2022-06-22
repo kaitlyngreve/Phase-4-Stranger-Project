@@ -57,7 +57,7 @@ Character.create!(
     age: 15, 
     strength: 7, 
     intelligence: 8, 
-    image: "https://static.wikia.nocookie.net/strangerthings8338/images/0/0b/Max_mayfield_season_2.jpg/revision/latest?cb=20210820101121"
+    image: "https://helios-i.mashable.com/imagery/articles/02FbnYlcVUKQs8YGRd7yI1l/hero-image.fill.size_1248x702.v1654806777.jpg"
 )
 Character.create!(
     name: "Will Byers", 
@@ -71,7 +71,7 @@ Character.create!(
     age: 15, 
     strength: 6, 
     intelligence: 6, 
-    image: "https://static.wikia.nocookie.net/strangerthings8338/images/8/83/Mike_Wheeler_-_S4.jpg/revision/latest?cb=20220323164808"
+    image: "https://resize.indiatvnews.com/en/resize/newbucket/360_-/2022/05/fom36yixiaeyqa0-1652955910.jpg"
 )
 Character.create!(
     name: "Lucas Sinclair", 
@@ -99,7 +99,7 @@ Character.create!(
     age: 17, 
     strength: 6, 
     intelligence: 9, 
-    image: "https://static.wikia.nocookie.net/strangerthings8338/images/f/fc/Robin_S3.png/revision/latest?cb=20190409051202"
+    image: "https://assets.teenvogue.com/photos/5d431ee9d6adfc000875b6c5/3:2/w_3000,h_2000,c_limit/tout.jpg"
 )
 Character.create!(
     name: "Nancy Wheeler", 
@@ -113,7 +113,7 @@ Character.create!(
     age: 18, 
     strength: 7, 
     intelligence: 6, 
-    image: "https://static.wikia.nocookie.net/strangerthings8338/images/0/0b/Jonathan-Byers-Season-2.png/revision/latest?cb=20180206233841"
+    image: "https://medias.spotern.com/wanted/w640/1/1310-1532336922.jpg"
 )
 Character.create!(
     name: "Eddie Munson", 
@@ -127,7 +127,7 @@ Character.create!(
     age: 15, 
     strength: 3, 
     intelligence: 15, 
-    image: "https://static.wikia.nocookie.net/strangerthings8338/images/8/8d/Erica_Sinclair_S3.png/revision/latest?cb=20190706021540"
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4Nh0q-KfxTgCG04GxGZ-iwnUqmqtGrFesVw&usqp=CAU"
 )
 Character.create!(
     name: "Argyle", 
@@ -141,7 +141,7 @@ Character.create!(
     age: 40, 
     strength: 6, 
     intelligence: 8, 
-    image: "https://static.wikia.nocookie.net/strangerthings8338/images/d/df/Joyce_%28S3%29.png/revision/latest?cb=20190705190931"
+    image: "https://media.glamour.com/photos/59f21012ad714a335821fc8a/master/pass/ST%20(1).jpg"
 )
 Character.create!(
     name: "Jim Hopper", 
@@ -155,20 +155,20 @@ Character.create!(
     age: 45, 
     strength: 9, 
     intelligence: 10, 
-    image: "https://static.wikia.nocookie.net/strangerthings8338/images/d/dd/Murray2.jpg/revision/latest?cb=20201103150557"
+    image: "https://www.usmagazine.com/wp-content/uploads/2022/05/Where-Does-Each-Stranger-Things-Character-End-Up-End-Season-4-015.jpg?w=1600&quality=86&strip=all"
 )
 Character.create!(
     name: "Eleven", 
     age: 15, 
     strength: 15, 
     intelligence: 8, 
-    image: "https://static.wikia.nocookie.net/strangerthings8338/images/d/dd/Murray2.jpg/revision/latest?cb=20201103150557"
+    image: "https://fictionhorizon.com/wp-content/uploads/2022/05/Stranger-Things-Season-4-Eleven-Header-copy-1024x576.png"
 )
 Character.create!(
     name: "Suzie Bingham", 
     age: 15, 
     strength: 2, 
     intelligence: 10, 
-    image: "https://static.wikia.nocookie.net/strangerthings8338/images/e/e7/Suzie_S3.png/revision/latest?cb=20190705073739"
+    image: "https://hips.hearstapps.com/hmg-prod/images/gabriella-pizzolo-1562790267.jpg"
 )
 puts "Done seeding characters 🚲"
