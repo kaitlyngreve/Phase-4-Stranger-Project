@@ -32,6 +32,9 @@ function App() {
       .then((team) => setTeams(team));
   }, []);
 
+  const handleNewCharacterForm = (data) => {
+    setCharacters([...characters, data])
+  }
   let character = characters.map((character) => character)
   // console.log(character)
 
@@ -73,7 +76,7 @@ function App() {
             <Login />
           </Route>
           <Route exact path="/characters">
-            <Characters characters={characters} teams={teams} handleChangeTeam={handleChangeTeam} handleNewTeam={handleNewTeam} newTeam={newTeam} />
+            <Characters characters={characters} teams={teams} handleChangeTeam={handleChangeTeam} handleNewTeam={handleNewTeam} newTeam={newTeam} handleNewCharacterForm={handleNewCharacterForm} />
           </Route>
           <Route exact path="/teams">
             <h1>Teams Count: </h1>

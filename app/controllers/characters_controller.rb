@@ -18,6 +18,11 @@ class CharactersController < ApplicationController
         render json: character, status: :ok
     end
 
+    def create
+        character = Character.create!(character_params)
+        render json: character, status: :created
+    end
+
     private
 
     def render_not_found_response
@@ -33,7 +38,7 @@ class CharactersController < ApplicationController
     end
 
     def character_params
-        params.permit(:monster_id, :team_id)
+        params.permit(:monster_id, :team_id, :name, :age, :strength, :intelligence, :image)
     end
 
 end

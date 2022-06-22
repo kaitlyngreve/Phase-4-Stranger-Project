@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import CharacterCard from "./CharacterCard";
 import { useHistory } from "react-router-dom";
+import CharacterForm from "./CharacterForm";
 
 
-function Characters({ characters, teams, handleChangeTeam, handleNewTeam, newTeam }) {
+function Characters({ characters, teams, handleChangeTeam, handleNewTeam, newTeam, handleNewCharacterForm }) {
 
     let team_id = teams.map(team => team.id)
 
@@ -45,6 +46,7 @@ function Characters({ characters, teams, handleChangeTeam, handleNewTeam, newTea
             <div className="character-card-container">
                 {characters.map(character => <CharacterCard character={character} key={character.id} handleChangeTeam={handleChangeTeam} handleNewTeam={handleNewTeam} newTeam={newTeam} />)}
             </div>
+            <CharacterForm handleNewCharacterForm={handleNewCharacterForm} />
             <h2> Choose your team name! </h2>
             <div className="dropdown">
                 <select className="form-control" name="team" value={teams} onChange={handleForm}>
