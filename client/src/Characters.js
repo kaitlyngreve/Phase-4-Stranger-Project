@@ -3,51 +3,50 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import CharacterCard from "./CharacterCard";
 
 
-function Characters({ characters, teams, handleChangeTeam }) {
-    const [teamId, setTeamId] = useState(null)
-    // const [team, setTeam] = useState([])
+function Characters({ characters, teams, handleChangeTeam, handleNewTeam, newTeam }) {
 
-    const team = teams.map(team => {
-        return team.id
-    })
+    let team_id = teams.map(team => team.id)
 
-    function handleClick(character) {
-        console.log(character.id)
-    }
 
     function handleForm(e) {
+        // console.log(team_id)
         let value = ''
         if (e.target.value === 'Hellfire Club') {
-            value = 'Hellfire Club'
+            value = team_id[0]
+            console.log(value)
         }
         else if (e.target.value === 'Scoops Ahoy') {
-            value = 'Scoops Ahoy'
+            value = team_id[1]
+            console.log(value)
         }
         else if (e.target.value === 'Starcourt') {
-            value = 'Starcourt'
+            value = team_id[2]
+            console.log(value)
         }
         else if (e.target.value === 'Hawkins High') {
-            value = 'Hawkins High'
+            value = team_id[3]
+            console.log(value)
         }
-        handleChangeTeam(e.target.value, value)
+        handleChangeTeam(e)
     }
-
-
 
 
     return (
         <div>
+            <h2> Choose your characters!</h2>
+            <div className="character-card-container">
+                {characters.map(character => <CharacterCard character={character} key={character.id} handleChangeTeam={handleChangeTeam} handleNewTeam={handleNewTeam} newTeam={newTeam} />)}
+            </div>
             <h2> Choose your team name! </h2>
             <div className="dropdown">
-                <select className="form-control" name="team" value={team.id} onChange={handleForm}>
+                <select className="form-control" name="team" value={teams} onChange={handleForm}>
+                    <option value=''>Select Team Name</option>
                     <option value="Hellfire Club">Hellfire Club</option>
                     <option value="Scoops Ahoy">Scoops Ahoy</option>
                     <option value="Starcourt">Starcourt</option>
                     <option value="Hawkins High">Hawkins High</option>
                 </select>
             </div>
-            <h2> Choose your characters!</h2>
-            {characters.map(character => <CharacterCard character={character} key={character.id} handleClick={handleClick} />)}
         </div>
     );
 }

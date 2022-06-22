@@ -14,7 +14,7 @@ class CharactersController < ApplicationController
 
     def update
         character = find_character
-        character.update!(character_params)
+        character.update!(team_id: params[:team_id])
         render json: character, status: :ok
     end
 

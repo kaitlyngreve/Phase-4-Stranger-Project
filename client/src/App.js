@@ -8,7 +8,7 @@ function App() {
   const [characters, setCharacters] = useState([])
   const [teams, setTeams] = useState([])
   const [selectedTeam, setSelectedTeam] = useState({})
-  // console.log(teams)
+  const [newTeam, setNewTeam] = useState([])
 
   useEffect(() => {
     fetch("/characters")
@@ -22,27 +22,36 @@ function App() {
       .then((team) => setTeams(team));
   }, []);
 
-  let character = characters.forEach((character) => character)
-  console.log(character)
-  console.log(characters)
+  let character = characters.map((character) => character)
+  // console.log(character)
 
-  function handleChangeTeam(e) {
-    fetch(`/characters/${character.id}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: JSON.stringify(
-
-      ),
-    })
-      .then(r => r.json())
-      .then(data => console.log(data))
+  function handleChangeTeam(e, team_id) {
+    console.log(e.target.value)
+    let myTeam = teams.filter(team => team.team_name === e.target.value)
+    console.log(myTeam[0].id)
+    const updatedCharacter = {
+      team_id: myTeam[0].id,
+      monster_id: 1
+    }
+    newTeam.map(character => {
+      fetch(`/characters/${character.id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify(
+          updatedCharacter
+        ),
+      })
+        .then(r => r.json())
+        .then(data => console.log('response', data))
+    }
+    )
   }
 
-  // const handleSelectedTeam = (team) => {
-  //   // setSelectedTeam(team)
-  // }
+  function handleNewTeam(character) {
+    setNewTeam(newTeam => [...newTeam, character])
+  }
 
   return (
     <BrowserRouter>
@@ -55,7 +64,7 @@ function App() {
             <Login />
           </Route>
           <Route exact path="/characters">
-            <Characters characters={characters} teams={teams} handleChangeTeam={handleChangeTeam} />
+            <Characters characters={characters} teams={teams} handleChangeTeam={handleChangeTeam} handleNewTeam={handleNewTeam} newTeam={newTeam} />
           </Route>
           <Route exact path="/teams">
             <h1>Teams Count: </h1>
