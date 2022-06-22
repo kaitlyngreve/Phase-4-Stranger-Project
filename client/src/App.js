@@ -3,12 +3,22 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Characters from "./Characters";
 import SignUp from "./Signup";
 import Login from "./Login";
+import { useHistory } from "react-router-dom";
+import Monsters from "./Monsters";
+import Win from "./Win";
+import Lose from "./Lose"
 
 function App() {
   const [characters, setCharacters] = useState([])
   const [teams, setTeams] = useState([])
-  const [selectedTeam, setSelectedTeam] = useState({})
   const [newTeam, setNewTeam] = useState([])
+  const [monsters, setMonsters] = useState([])
+
+  useEffect(() => {
+    fetch("/monsters")
+      .then((r) => r.json())
+      .then((data) => setMonsters(data));
+  }, []);
 
   useEffect(() => {
     fetch("/characters")
@@ -30,8 +40,7 @@ function App() {
     let myTeam = teams.filter(team => team.team_name === e.target.value)
     console.log(myTeam[0].id)
     const updatedCharacter = {
-      team_id: myTeam[0].id,
-      monster_id: 1
+      team_id: myTeam[0].id
     }
     newTeam.map(character => {
       fetch(`/characters/${character.id}`, {
@@ -70,13 +79,13 @@ function App() {
             <h1>Teams Count: </h1>
           </Route>
           <Route exact path="/monster_fights">
-            <h1>Monster Fights Count: </h1>
+            <Monsters newTeam={newTeam} monsters={monsters} />
           </Route>
           <Route exact path="/win">
-            <h1>You won count: </h1>
+            <Win />
           </Route>
           <Route exact path="/lose">
-            <h1>LOSER Count: </h1>
+            <Lose />
           </Route>
         </Switch>
       </div>
