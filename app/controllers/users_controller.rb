@@ -7,6 +7,11 @@ class UsersController < ApplicationController
     render json: user, status: :created
   end
 
+  def index
+    users = User.all 
+    render json: users, status: :ok
+  end
+
   def show
     render json: @current_user
   end

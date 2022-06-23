@@ -14,6 +14,27 @@ function App() {
   const [newTeam, setNewTeam] = useState([])
   const [monsters, setMonsters] = useState([])
 
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    fetch('/me')
+      .then((res) => {
+        if (res.ok) {
+          res.json()
+            .then((user) => {
+              setIsAuthenticated(true);
+              setUser(user);
+            });
+        }
+      });
+
+    fetch('/characters')
+      .then(res => res.json())
+      .then(setCharacters);
+
+  }, []);
+
   useEffect(() => {
     fetch("/monsters")
       .then((r) => r.json())
@@ -31,6 +52,8 @@ function App() {
       .then((r) => r.json())
       .then((team) => setTeams(team));
   }, []);
+
+  if (!isAuthenticated) return <Login error={'please log in'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />
 
   const handleNewCharacterForm = (data) => {
     setCharacters([...characters, data])
