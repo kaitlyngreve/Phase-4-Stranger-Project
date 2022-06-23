@@ -1,20 +1,20 @@
 body {
 
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-        sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-image: url('/images/background_dust.jpg');
-    background-size: cover;
-    background-repeat: repeat-y;
-    background-position-x: center;
-    background-position-y: 0vh;
-    position: relative;
-    color: #fff;
-    animation: scrollBG 50s linear 0s infinite;
-    overflow-x: hidden;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url('/images/background_dust.jpg');
+  background-size: cover;
+  background-repeat: repeat-y;
+  background-position-x: center;
+  background-position-y: 0vh;
+  position: relative;
+  color: #fff;
+  animation: scrollBG 50s linear 0s infinite;
+  overflow-x: hidden;
 }
 
 body:before {
@@ -66,24 +66,26 @@ body:after {
     max-width: 800px;
     margin: 0 auto;
 
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-        sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
 
 .character-card-container {
-    border-radius: 15px;
-    overflow: hidden;
+
+  border-radius: 15px;
+  overflow: hidden;
+  justify-content: center;
 }
 
 img.character-card {
@@ -96,16 +98,36 @@ img.character-card {
 }
 
 .character-card {
-    width: 100%;
-    height: 100%;
-    border-radius: 5%;
+  width: 100%;
+  height: 100%;
+  border-radius: 5%;
 
+}
+
+.character-card-selected {
+  width: 100%;
+  height: 100%;
+  border-radius: 5%;
+  border: solid tomato;
+  border-width: 3px;
+}
+
+img.character-card-selected {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: top center;
+  aspect-ratio: 1;
+  display: block;
 }
 
 .character-card:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
+.character-card-selected:hover {
+  cursor: pointer;
+}
 
 .character-cards-container {
     display: grid;
@@ -116,184 +138,172 @@ img.character-card {
     justify-content: center;
 }
 
+.delete-button {
+  cursor: pointer;
+}
+
 h2 {
-    display: inline-block;
+  display: inline-block;
 }
-
-.character-card-container {
-    display: grid;
-    margin-left: 30%;
-    margin-right: -10%;
-    margin-bottom: -40%;
-    grid-template-columns: 200px 200px 200px 200px;
-    grid-template-rows: 200px 200px 200px 200px;
-    grid-row-gap: 5px;
-    grid-column-gap: 5px;
-    justify-content: center;
-}
-
 
 /* STRANGER THINGS FONT */
-body {
-    background: #000;
-}
 
 .st {
-    width: 625px;
-    margin: 6rem auto 3rem auto;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 8rem;
-    font-family: 'ITC Benguiat W01';
-    font-weight: 800;
-    color: #1c0502;
-    text-shadow: -0.05rem -0.05rem 1px #ed2b12,
-        0.05rem -0.05rem 1px #ed2b12,
-        -0.05rem 0.05rem 1px #ed2b12,
-        0.05rem 0.05rem 1px #ed2b12,
-        0 0 15px #630100,
-        0 0 20px #450100;
-    letter-spacing: -2px;
+  width: 625px;
+  margin: 6rem auto 3rem auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 8rem;
+  font-family: 'ITC Benguiat W01';
+  font-weight: 800;
+  color: #1c0502;
+  text-shadow: -0.05rem -0.05rem 1px #ed2b12,
+    0.05rem -0.05rem 1px #ed2b12,
+    -0.05rem 0.05rem 1px #ed2b12,
+    0.05rem 0.05rem 1px #ed2b12,
+    0 0 15px #630100,
+    0 0 20px #450100;
+  letter-spacing: -2px;
 }
 
 .st p {
-    display: inline-block;
-    margin: 0;
+  display: inline-block;
+  margin: 0;
 }
 
 .st-bound {
-    box-shadow: -0.05rem -0.05rem 2px #ed2b12,
-        0.05rem -0.05rem 2px #ed2b12,
-        -0.05rem 0.05rem 2px #ed2b12,
-        0.05rem 0.05rem 2px #ed2b12;
-    height: 5px;
+  box-shadow: -0.05rem -0.05rem 2px #ed2b12,
+    0.05rem -0.05rem 2px #ed2b12,
+    -0.05rem 0.05rem 2px #ed2b12,
+    0.05rem 0.05rem 2px #ed2b12;
+  height: 5px;
 }
 
 .st-bound-full {
-    width: 100%;
-    margin: auto;
-    margin-bottom: -1.1rem;
-    max-width: 612px;
-    margin-left: 5px;
+  width: 100%;
+  margin: auto;
+  margin-bottom: -1.1rem;
+  max-width: 612px;
+  margin-left: 5px;
 }
 
 .st-bound-mini {
-    margin-top: 11rem;
-    margin-top: 1rem;
+  margin-top: 11rem;
+  margin-top: 1rem;
 }
 
 .st-bound-left {
-    float: left;
-    width: 145px;
-    position: relative;
-    margin-top: 1rem;
-    left: 5px;
+  float: left;
+  width: 145px;
+  position: relative;
+  margin-top: 1rem;
+  left: 5px;
 }
 
 .st-bound-right {
-    float: right;
-    width: 145px;
-    left: 0.3rem;
-    position: relative;
+  float: right;
+  width: 145px;
+  left: 0.3rem;
+  position: relative;
 }
 
 .st-bottom {
-    clear: both;
-    top: -14.75rem;
-    position: relative;
-    margin-top: 12.00rem;
-    left: .1rem;
-    letter-spacing: 2px;
+  clear: both;
+  top: -14.75rem;
+  position: relative;
+  margin-top: 12.00rem;
+  left: .1rem;
+  letter-spacing: 2px;
 }
 
 .st-drop {
-    line-height: 0;
-    position: relative;
-    top: 1.90rem;
+  line-height: 0;
+  position: relative;
+  top: 1.90rem;
 }
 
 .st-stranger-y {
-    font-size: 10.5rem;
-    letter-spacing: -8px;
+  font-size: 10.5rem;
+  letter-spacing: -8px;
 }
 
 .st-stranger-o {
-    font-size: 6.5rem;
-    letter-spacing: 0;
+  font-size: 6.5rem;
+  letter-spacing: 0;
 }
 
 .st-stranger-u {
-    font-size: 10.5rem;
-    right: 0.3rem;
+  font-size: 10.5rem;
+  right: 0.3rem;
 }
 
 .st-things-d {
-    font-size: 104%;
-    letter-spacing: 0.2px;
+  font-size: 104%;
+  letter-spacing: 0.2px;
 }
 
 .st-things-i {
-    letter-spacing: -0.5px;
+  letter-spacing: -0.5px;
 }
 
 .st-things-e {
-    letter-spacing: -3px;
+  letter-spacing: -3px;
 }
 
 .lose {
-    background-size: 100%;
-    background-image: url(https://media.giphy.com/media/QXhMhfUnE7FdX0p9gH/giphy.gif);
+  background-size: 100vh;
+  background-image: url("/images/demogorgon_gif.gif");
 }
 
 /*all other text*/
 .st-stranger-text {
-    /* font-size: 6.5rem; */
-    letter-spacing: 0;
-    font-size: 2.5rem;
-    font-family: 'ITC Benguiat W01';
-    font-weight: 800;
-    color: #1c0502;
-    text-shadow: -0.05rem -0.05rem 1px #ed2b12,
-        0.05rem -0.05rem 1px #ed2b12,
-        -0.05rem 0.05rem 1px #ed2b12,
-        0.05rem 0.05rem 1px #ed2b12,
-        0 0 15px #630100,
-        0 0 20px #450100;
-    letter-spacing: -2px;
+  /* font-size: 6.5rem; */
+  letter-spacing: 0;
+  font-size: 2.5rem;
+  font-family: 'ITC Benguiat W01';
+  font-weight: 800;
+  color: #1c0502;
+  text-shadow: -0.05rem -0.05rem 1px #ed2b12,
+    0.05rem -0.05rem 1px #ed2b12,
+    -0.05rem 0.05rem 1px #ed2b12,
+    0.05rem 0.05rem 1px #ed2b12,
+    0 0 15px #630100,
+    0 0 20px #450100;
+  letter-spacing: -2px;
 }
 
 /*background for win*/
 .win {
-    background-size: 50%;
-    background-image: url(https://media.giphy.com/media/QKVY9InPCvfSM34sS8/giphy.gif);
+  background-size: 50vh;
+  background-image: url("/images/strangerthings_kids.webp");
 }
 
 /*signup div for form structure*/
 .signup {
-    width: 50%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    margin-top: 10%;
-    border-radius: 17px;
-    box-sizing: border-box;
-    margin-left: 25%;
-    margin-right: 25%;
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  margin-top: 10%;
+  border-radius: 17px;
+  box-sizing: border-box;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
 .username-1 {
-    margin-left: 6rem;
+  margin-left: 6rem;
 }
 
 .password-1 {
-    margin-left: 6.5rem;
+  margin-left: 6.5rem;
 }
 
 .signup-sub {
-    margin-left: 0.2rem;
+  margin-left: 0.2rem;
 }
 
 .click-here {
-    margin-left: 9.5rem;
+  margin-left: 9.5rem;
 
 }
