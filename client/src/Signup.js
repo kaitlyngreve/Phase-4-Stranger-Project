@@ -20,14 +20,14 @@ function SignUp({ onLogin }) {
             }),
         })
             .then((r) => r.json())
-            .then(onLogin);
+            .then(history.push("/characters"));
     }
 
     const history = useHistory()
 
-    function handleSignupClick(e) {
+    function handleGoToLogin(e) {
         e.preventDefault()
-        history.push("/characters")
+        history.push("/login")
     }
 
     return (
@@ -56,8 +56,8 @@ function SignUp({ onLogin }) {
                     value={passwordConfirmation}
                     onChange={(e) => setPasswordConfirmation(e.target.value)}
                 />
-                <button type="submit" class="signup-sub" onClick={handleSignupClick}> Submit </button><br></br>
-                <button type="login-button" class="click-here" onClick={handleSignupClick}>Click Here if You Have an Account</button>
+                <button type="submit" class="signup-sub"> Submit </button><br></br>
+                <button type="login-button" class="click-here" onClick={handleGoToLogin}>Click Here if You Have an Account</button>
             </form>
         </div>
     );
