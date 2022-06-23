@@ -32,7 +32,7 @@ function Monsters({ monsters, newTeam }) {
 
     return (
         <>
-            <div>
+            <div class="st-stranger-text">
                 {monsters.map(monster => <MonsterCard monster={monster} />)}
             </div>
             <div>

@@ -13,12 +13,14 @@ function Win() {
 
     return (
         <>
-            <div>
-                <h1>YOU DEFEATED THE MONSTER</h1>
-            </div>
-            <div>
-                <button onClick={handlePlayAgain} >FIGHT AGAIN</button>
-            </div>
+            <body class="win">
+                <div class="st-stranger-text">
+                    <h1>YOU DEFEATED THE MONSTER</h1>
+                </div>
+                <div>
+                    <button onClick={handlePlayAgain} >FIGHT AGAIN</button>
+                </div>
+            </body>
         </>
     );
 }
