@@ -23,6 +23,12 @@ class CharactersController < ApplicationController
         render json: character, status: :created
     end
 
+    def destroy
+        character = find_character
+        character.destroy!
+        head :no_content
+    end
+
     private
 
     def render_not_found_response

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :characters, only: [:index, :show, :update, :create]
+  resources :characters
   resources :monsters, only: [:index, :show, :destroy]
   resources :teams
 

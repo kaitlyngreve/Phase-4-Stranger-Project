@@ -61,12 +61,16 @@ function App() {
     )
   }
 
+  const filteredCharacters = () => {
+    setCharacters(characters.filter(character => character.id !== character.id))
+  }
+
   function handleNewTeam(character) {
-    setNewTeam(newTeam => [...newTeam, character])
+    setNewTeam(newTeam => [...newTeam, character].slice(0, 4))
   }
 
   return (
-    <BrowserRouter>
+    < BrowserRouter >
       <div className="App">
         <Switch>
           <Route exact path="/">
@@ -76,7 +80,7 @@ function App() {
             <Login />
           </Route>
           <Route exact path="/characters">
-            <Characters characters={characters} teams={teams} handleChangeTeam={handleChangeTeam} handleNewTeam={handleNewTeam} newTeam={newTeam} handleNewCharacterForm={handleNewCharacterForm} />
+            <Characters characters={characters} teams={teams} handleChangeTeam={handleChangeTeam} handleNewTeam={handleNewTeam} newTeam={newTeam} handleNewCharacterForm={handleNewCharacterForm} filteredCharacters={filteredCharacters} />
           </Route>
           <Route exact path="/teams">
             <h1>Teams Count: </h1>
@@ -92,7 +96,7 @@ function App() {
           </Route>
         </Switch>
       </div>
-    </BrowserRouter>
+    </BrowserRouter >
   );
 }
 

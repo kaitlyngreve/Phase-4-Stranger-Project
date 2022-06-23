@@ -137,7 +137,7 @@ Character.create!(
     age: 15, 
     strength: 3, 
     intelligence: 15, 
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4Nh0q-KfxTgCG04GxGZ-iwnUqmqtGrFesVw&usqp=CAU",
+    image: "https://assets.teenvogue.com/photos/5d274cd92fdf2e00086c4b8b/2:3/w_2000,h_3000,c_limit/00-promo-erica-sinclair.jpg",
     monster_id: demogorgon.id
 )
 Character.create!(

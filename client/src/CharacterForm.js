@@ -40,7 +40,7 @@ function CharacterForm({ handleNewCharacterForm }) {
         <div>
             <form onSubmit={handleSubmit} className="form-container">
                 <h4 className="form-header">Add a Character</h4>
-                <label>
+                <label className="form-label">
                     Name
                     <input
                         className="form-inputs"

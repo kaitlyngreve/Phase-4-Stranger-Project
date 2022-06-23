@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import CharacterForm from "./CharacterForm";
 
 
-function Characters({ characters, teams, handleChangeTeam, handleNewTeam, newTeam, handleNewCharacterForm }) {
+function Characters({ characters, teams, handleChangeTeam, handleNewTeam, newTeam, handleNewCharacterForm, handleDelete, filteredCharacters }) {
 
     let team_id = teams.map(team => team.id)
 
@@ -44,7 +44,7 @@ function Characters({ characters, teams, handleChangeTeam, handleNewTeam, newTea
         <div class="st-stranger-text">
             <h2> Choose your FOUR characters!</h2>
             <div className="character-cards-container">
-                {characters.map(character => <CharacterCard character={character} key={character.id} handleChangeTeam={handleChangeTeam} handleNewTeam={handleNewTeam} newTeam={newTeam} />)}
+                {characters.map(character => <CharacterCard character={character} key={character.id} handleChangeTeam={handleChangeTeam} handleNewTeam={handleNewTeam} newTeam={newTeam} handleDelete={handleDelete} filteredCharacters={filteredCharacters} />)}
             </div>
             <CharacterForm handleNewCharacterForm={handleNewCharacterForm} />
             <h2> Choose your team name! </h2>

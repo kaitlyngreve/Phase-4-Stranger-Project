@@ -7,8 +7,8 @@ function NewTeamCard({ teamMember }) {
 
     return (
         <>
-            <div>
-                <img src={teamMember.image} />
+            <div className="character-card-container" >
+                <img className="character-card" src={teamMember.image} />
             </div>
         </>
     );
