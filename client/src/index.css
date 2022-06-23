@@ -1,10 +1,78 @@
 body {
+
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url('/images/background_dust.jpg');
+  background-size: cover;
+  background-repeat: repeat-y;
+  background-position-x: center;
+  background-position-y: 0vh;
+  position: relative;
+  color: #fff;
+  animation: scrollBG 50s linear 0s infinite;
+  overflow-x: hidden;
+}
+
+body:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/background_dust.jpg');
+  background-size: cover;
+  background-repeat: repeat-y;
+  background-position-x: center;
+  background-position-y: 0vh;
+  animation: scrollBG 67s linear 0s infinite reverse;
+  transform: scale(1.5);
+  opacity: .5;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Background filter to dim the image */
+body:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .2);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* @keyframes scrollBG {
+  0% {
+    background-position-y: 0vh;
+  }
+
+  100% {
+    background-position-y: 100vh;
+  }
+} */
+
+
+.App {
+  max-width: 800px;
+  margin: 0 auto;
+
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
@@ -12,15 +80,43 @@ code {
         monospace;
 }
 
+
+.character-card-container {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+img.character-card {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: top center;
+  aspect-ratio: 1;
+  display: block;
+
 .character-card {
     width: 100%;
     height: 100%;
     border-radius: 5%;
+
 }
 
 .character-card:hover {
     cursor: pointer;
 }
+
+
+.character-cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+  justify-content: center;
+}
+
+h2 {
+  display: inline-block;
 
 .character-card-container {
     display: grid;
@@ -197,4 +293,5 @@ body {
 
 .click-here {
     margin-left: 9.5rem;
+
 }
