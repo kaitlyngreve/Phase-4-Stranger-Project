@@ -43,7 +43,7 @@ function Characters({ characters, teams, handleChangeTeam, handleNewTeam, newTea
     return (
         <div>
             <h2> Choose your FOUR characters!</h2>
-            <div className="character-card-container">
+            <div className="character-cards-container">
                 {characters.map(character => <CharacterCard character={character} key={character.id} handleChangeTeam={handleChangeTeam} handleNewTeam={handleNewTeam} newTeam={newTeam} />)}
             </div>
             <CharacterForm handleNewCharacterForm={handleNewCharacterForm} />
