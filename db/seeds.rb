@@ -36,7 +36,7 @@ demogorgon = Monster.create!(
     name: "Demogorgon",
     image: "https://imgix.bustle.com/uploads/image/2020/8/3/bd08021f-3b7f-4537-86dd-ee51d7ee5cc0-strangerthingsdemogorgon.jpg?w=710&h=380&fit=max&auto=format%2Ccompress",
     monster_description: "A matured Demodog. Unbeatable. Indestructable. Only weakness - fire 🔥",
-    monster_strength: 47 
+    monster_strength: 55 
 )
 # Monster.create!(
 #     name: "Mind Flayer",
@@ -57,7 +57,7 @@ Character.create!(
     age: 15, 
     strength: 7, 
     intelligence: 8, 
-    image: "https://helios-i.mashable.com/imagery/articles/02FbnYlcVUKQs8YGRd7yI1l/hero-image.fill.size_1248x702.v1654806777.jpg",
+    image: "https://s2.r29static.com/bin/entry/6ed/x,80/1877028/image.jpg",
     monster_id: demogorgon.id
 )
 Character.create!(

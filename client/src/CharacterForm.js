@@ -70,6 +70,8 @@ function CharacterForm({ handleNewCharacterForm }) {
                         onChange={e => setStrength(e.target.value)}>
                     </input>
                 </label>
+                <br></br>
+                <br></br>
                 <label>
                     Intelligence
                     <input
@@ -90,6 +92,8 @@ function CharacterForm({ handleNewCharacterForm }) {
                         onChange={e => setImage(e.target.value)}>
                     </input>
                 </label>
+                <br></br>
+                <br></br>
                 <button className="form-button">Add Character to Dock</button>
             </form>
         </div>
