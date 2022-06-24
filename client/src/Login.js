@@ -53,15 +53,15 @@ function Login({ setUser, setIsAuthenticated }) {
     }
 
     return (
-        <div>
+        <div className='login'>
             <form onSubmit={handleSubmit} class="st-stranger-text" >
-                <label htmlFor="username">Username:  </label>
+                <label htmlFor="username" className="username-2">Username:  </label>
                 <input
                     type="text"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                 />
-                <label>Password:  </label>
+                <label className="password-2">Password:  </label>
                 <input
                     type="password"
                     value={password}

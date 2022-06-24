@@ -35,13 +35,15 @@ function Monsters({ monsters, newTeam }) {
             <div class="st-stranger-text">
                 {monsters.map(monster => <MonsterCard monster={monster} />)}
             </div>
-            <div className="character-cards-container" >
+            <div className="fight-character-cards-container" >
                 {newTeam.map(teamMember => <NewTeamCard teamMember={teamMember} />)}
             </div>
-            <button onClick={handleResults}>Click to Attack</button>
-            <button onClick={handleHiddenButton}>
-                OUTCOME
-            </button>
+            <div className="button-fight">
+                <button onClick={handleResults}>Click to Attack</button>
+                <button onClick={handleHiddenButton}>
+                    OUTCOME
+                </button>
+            </div>
         </>
     );
 }
