@@ -77,7 +77,7 @@ function Characters({ characters, teams, handleChangeTeam, handleNewTeam, newTea
                     <option value="Hawkins High">Hawkins High</option>
                 </select>
             </div>
-            <div class="tenor-gif-embed" data-postid="14509160" data-share-method="host" data-aspect-ratio="2" data-width="100%">
+            <div className="fight-button-container" >
                 <button className="fight-button" onClick={handleTeamClick}>Travel into Upside Down</button>
             </div>
         </div>
