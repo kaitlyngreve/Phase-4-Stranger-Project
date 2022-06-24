@@ -25,11 +25,6 @@ function SignUp({ onLogin }) {
 
     const history = useHistory()
 
-    function handleGoToLogin(e) {
-        e.preventDefault()
-        history.push("/login")
-    }
-
     return (
         <div className='signup'>
             <form onSubmit={handleSubmit} className="st-stranger-text">
@@ -56,8 +51,7 @@ function SignUp({ onLogin }) {
                     value={passwordConfirmation}
                     onChange={(e) => setPasswordConfirmation(e.target.value)}
                 />
-                <button type="submit" className="signup-sub"> Submit </button><br></br>
-                <button type="login-button" className="click-here" onClick={handleGoToLogin}>Click Here if You Have an Account</button>
+                <button type="submit" className="multi-purpose-button"> Submit </button><br></br>
             </form>
         </div>
     );

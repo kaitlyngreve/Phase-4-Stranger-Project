@@ -99,10 +99,10 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path="/">
-            <SignUp />
-          </Route>
-          <Route exact path="/login">
             <Login />
+          </Route>
+          <Route exact path="/signup">
+            <SignUp />
           </Route>
           <Route exact path="/characters">
             <Characters handleDeleteCharacter={handleDeleteCharacter} characters={characters} teams={teams} handleChangeTeam={handleChangeTeam} handleNewTeam={handleNewTeam} newTeam={newTeam} handleNewCharacterForm={handleNewCharacterForm} />

@@ -52,6 +52,11 @@ function Login({ setUser, setIsAuthenticated }) {
         history.push("/characters")
     }
 
+    function handleGoToSignUp(e) {
+        e.preventDefault()
+        history.push("/signup")
+    }
+
     return (
         <div className='login'>
             <form onSubmit={handleSubmit} class="st-stranger-text" >
@@ -67,8 +72,8 @@ function Login({ setUser, setIsAuthenticated }) {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <button type="submit">Login</button>
-                {/* <button>Logout</button> */}
+                <button type="submit" className="multi-purpose-button">Login</button>
+                <button type="login-button" className="multi-purpose-button" onClick={handleGoToSignUp}>Click Here to Signup</button>
             </form>
             {error ? <div>{error}</div> : null}
         </div>

@@ -6,6 +6,7 @@ import CharacterForm from "./CharacterForm";
 
 
 function Characters({ characters, teams, handleChangeTeam, handleNewTeam, newTeam, handleNewCharacterForm, handleDelete, filteredCharacters, handleDeleteCharacter }) {
+    const [selectedTeamName, setSelectedTeamName] = useState('')
 
     let team_id = teams.map(team => team.id)
 
@@ -21,27 +22,35 @@ function Characters({ characters, teams, handleChangeTeam, handleNewTeam, newTea
         let value = ''
         if (e.target.value === 'Hellfire Club') {
             value = team_id[0]
+            setSelectedTeamName(e.target.value)
             console.log(value)
         }
         else if (e.target.value === 'Scoops Ahoy') {
             value = team_id[1]
+            setSelectedTeamName(e.target.value)
             console.log(value)
         }
         else if (e.target.value === 'Starcourt') {
             value = team_id[2]
+            setSelectedTeamName(e.target.value)
             console.log(value)
         }
         else if (e.target.value === 'Hawkins High') {
             value = team_id[3]
+            setSelectedTeamName(e.target.value)
             console.log(value)
         }
+        else { setSelectedTeamName(e.target.value) }
         handleChangeTeam(e)
     }
 
 
     return (
         <div >
-            <h2 className="st-character-title">Choose your FOUR characters!</h2>
+            <div className="st-character-title-container">
+                <h2 className="st-character-title">Peculiar Entities</h2>
+                <h2 className="st-character-title-2">a stranger things game</h2>
+            </div>
             <div className="instructions">
                 <div className="instructions-header">
                     <h4>We're in the Upside Down ...</h4>
@@ -58,17 +67,19 @@ function Characters({ characters, teams, handleChangeTeam, handleNewTeam, newTea
                 {characters.map(character => <CharacterCard character={character} key={character.id} handleChangeTeam={handleChangeTeam} handleNewTeam={handleNewTeam} newTeam={newTeam} handleDelete={handleDelete} filteredCharacters={filteredCharacters} handleDeleteCharacter={handleDeleteCharacter} />)}
             </div>
             <CharacterForm handleNewCharacterForm={handleNewCharacterForm} />
-            <h2> Choose your team name! </h2>
             <div className="dropdown">
-                <select className="form-control" name="team" value={teams} onChange={handleForm}>
-                    <option value=''>Select Team Name</option>
-                    <option value="Hellfire Club">Hellfire Club</option>
+                <h2 className="instructions-header"> Choose your team name! </h2>
+                <select className="form-control" name="team" value={selectedTeamName} onChange={handleForm}>
+                    <option value='Select Team Name'>Select Team Name</option>
+                    <option value={"Hellfire Club"}>Hellfire Club</option>
                     <option value="Scoops Ahoy">Scoops Ahoy</option>
                     <option value="Starcourt">Starcourt</option>
                     <option value="Hawkins High">Hawkins High</option>
                 </select>
             </div>
-            <button onClick={handleTeamClick}>FIGHTTTTT</button>
+            <div class="tenor-gif-embed" data-postid="14509160" data-share-method="host" data-aspect-ratio="2" data-width="100%">
+                <button className="fight-button" onClick={handleTeamClick}>Travel into Upside Down</button>
+            </div>
         </div>
     );
 }

@@ -92,7 +92,7 @@ function CharacterForm({ handleNewCharacterForm }) {
                 </label>
                 <br></br>
                 <br></br>
-                <button className="form-button">Add Character to Dock</button>
+                <button className="multi-purpose-button-2">Add Character to Dock</button>
             </form>
         </div>
     )

@@ -22,8 +22,8 @@ function CharacterCard({ character, handleDeleteCharacter, handleNewTeam, filter
                 {/* <h2 className="character-card" id="character-name">{character.name}</h2>
                 <h1 className="character-card">{character.age}</h1> */}
                 <img className={isSelected ? "character-card-selected" : "character-card"} src={character.image} onClick={handleOutline} />
-                <div className="delete-button-container">
-                    <button className="delete-button" onClick={handleDelete}>{`Sacrifice ${character.name}`}</button>
+                <div className="multi-purpose-button-container">
+                    <button className="multi-purpose-button" onClick={handleDelete}>{`Sacrifice ${character.name}`}</button>
                 </div>
             </div>
         </>
