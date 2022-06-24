@@ -13,9 +13,8 @@ function Lose() {
 
     return (
         <>
-            <body class="lose">
+            <div class="lose">
                 <div class="st">
-
                     <div class="st-top">
                         <div class="st-bound st-bound-full"></div>
                         <p><span class="st-drop st-stranger-y">Y</span><span class="st-stranger-o">ou hav</span><span class="st-drop st-stranger-u">e</span>
@@ -24,7 +23,6 @@ function Lose() {
                         <div class="st-bound st-bound-mini st-bound-left"></div>
                         <div class="st-bound st-bound-mini st-bound-right"></div>
                     </div>
-
                     <div class="st-bottom">
                         <p><span class="st-things-d">D</span><span class="st-things-i">ie</span><span class="st-things-e">d</span></p>
                     </div>
@@ -34,7 +32,7 @@ function Lose() {
                 <div>
                     <button onClick={handlePlayAgain} >FIGHT AGAIN</button>
                 </div>
-            </body>
+            </div>
         </>
     );
 }
