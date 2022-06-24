@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function CharacterForm({ handleNewCharacterForm }) {
     const [name, setName] = useState("")
@@ -40,8 +39,7 @@ function CharacterForm({ handleNewCharacterForm }) {
         <div>
             <form onSubmit={handleSubmit} className="form-container">
                 <h4 className="form-header">Add a Character</h4>
-                <label className="form-label">
-                    Name
+                <label className="form-label">Name:
                     <input
                         className="form-inputs"
                         type="text"
@@ -51,7 +49,7 @@ function CharacterForm({ handleNewCharacterForm }) {
                     </input>
                 </label>
                 <label>
-                    Age
+                    Age:
                     <input
                         className="form-inputs"
                         type="text"
@@ -61,7 +59,7 @@ function CharacterForm({ handleNewCharacterForm }) {
                     </input>
                 </label>
                 <label>
-                    Strength
+                    Strength:
                     <input
                         className="form-inputs"
                         type="text"
@@ -73,7 +71,7 @@ function CharacterForm({ handleNewCharacterForm }) {
                 <br></br>
                 <br></br>
                 <label>
-                    Intelligence
+                    Intelligence:
                     <input
                         className="form-inputs"
                         type="text"
@@ -83,7 +81,7 @@ function CharacterForm({ handleNewCharacterForm }) {
                     </input>
                 </label>
                 <label>
-                    Character Image
+                    Character Image:
                     <input
                         className="form-inputs"
                         type="text"
