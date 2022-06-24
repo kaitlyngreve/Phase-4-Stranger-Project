@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-// import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-function CharacterCard({ character, handleChangeTeam, handleNewTeam, filteredCharacters }) {
+function CharacterCard({ character, handleDeleteCharacter, handleNewTeam, filteredCharacters }) {
     const [monsterId, setMonsterId] = useState()
     const [isSelected, setIsSelected] = useState(false)
 
@@ -14,9 +13,7 @@ function CharacterCard({ character, handleChangeTeam, handleNewTeam, filteredCha
             method: 'DELETE'
         })
             .then(res => res.json())
-            .then(json => console.log(json));
-        filteredCharacters(character.id)
-        window.location.reload(false);
+            .then(handleDeleteCharacter(character));
     }
 
     return (

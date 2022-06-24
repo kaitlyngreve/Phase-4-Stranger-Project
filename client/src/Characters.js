@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import CharacterForm from "./CharacterForm";
 
 
-function Characters({ characters, teams, handleChangeTeam, handleNewTeam, newTeam, handleNewCharacterForm, handleDelete, filteredCharacters }) {
+function Characters({ characters, teams, handleChangeTeam, handleNewTeam, newTeam, handleNewCharacterForm, handleDelete, filteredCharacters, handleDeleteCharacter }) {
 
     let team_id = teams.map(team => team.id)
 
@@ -18,7 +18,6 @@ function Characters({ characters, teams, handleChangeTeam, handleNewTeam, newTea
 
 
     function handleForm(e) {
-        // console.log(team_id)
         let value = ''
         if (e.target.value === 'Hellfire Club') {
             value = team_id[0]
@@ -41,10 +40,22 @@ function Characters({ characters, teams, handleChangeTeam, handleNewTeam, newTea
 
 
     return (
-        <div class="st-stranger-text">
-            <h2> Choose your FOUR characters!</h2>
+        <div >
+            <h2 className="st-character-title">Choose your FOUR characters!</h2>
+            <div className="instructions">
+                <div className="instructions-header">
+                    <h4>We're in the Upside Down ...</h4>
+                </div>
+                <div className="instructions-p">
+                    <p>And we have a Demogorgon to fight!
+                        You can choose four of our Stranger Things friends to go with you,
+                        but pick carfully. You need enough strength to defeat the unbeatable Demogorgon.
+                        Once you select your team, choose your team name and then FIGHT!
+                    </p>
+                </div>
+            </div>
             <div className="character-cards-container">
-                {characters.map(character => <CharacterCard character={character} key={character.id} handleChangeTeam={handleChangeTeam} handleNewTeam={handleNewTeam} newTeam={newTeam} handleDelete={handleDelete} filteredCharacters={filteredCharacters} />)}
+                {characters.map(character => <CharacterCard character={character} key={character.id} handleChangeTeam={handleChangeTeam} handleNewTeam={handleNewTeam} newTeam={newTeam} handleDelete={handleDelete} filteredCharacters={filteredCharacters} handleDeleteCharacter={handleDeleteCharacter} />)}
             </div>
             <CharacterForm handleNewCharacterForm={handleNewCharacterForm} />
             <h2> Choose your team name! </h2>

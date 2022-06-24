@@ -58,8 +58,14 @@ function App() {
   const handleNewCharacterForm = (data) => {
     setCharacters([...characters, data])
   }
+
+  const handleDeleteCharacter = (char) => {
+    console.log(char)
+    let filteredChar = characters.filter(character => character.id !== char.id)
+    setCharacters(filteredChar)
+  }
+
   let character = characters.map((character) => character)
-  // console.log(character)
 
   function handleChangeTeam(e, team_id) {
     console.log(e.target.value)
@@ -84,10 +90,6 @@ function App() {
     )
   }
 
-  const filteredCharacters = () => {
-    setCharacters(characters.filter(character => character.id !== character.id))
-  }
-
   function handleNewTeam(character) {
     setNewTeam(newTeam => [...newTeam, character].slice(0, 4))
   }
@@ -103,7 +105,7 @@ function App() {
             <Login />
           </Route>
           <Route exact path="/characters">
-            <Characters characters={characters} teams={teams} handleChangeTeam={handleChangeTeam} handleNewTeam={handleNewTeam} newTeam={newTeam} handleNewCharacterForm={handleNewCharacterForm} filteredCharacters={filteredCharacters} />
+            <Characters handleDeleteCharacter={handleDeleteCharacter} characters={characters} teams={teams} handleChangeTeam={handleChangeTeam} handleNewTeam={handleNewTeam} newTeam={newTeam} handleNewCharacterForm={handleNewCharacterForm} />
           </Route>
           <Route exact path="/teams">
             <h1>Teams Count: </h1>
