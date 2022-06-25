@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 function Lose() {
-
     const history = useHistory()
 
     function handlePlayAgain(e) {
         e.preventDefault()
         history.push("/characters")
+        window.location.reload(false)
     }
 
     return (
@@ -26,12 +26,11 @@ function Lose() {
                     <div class="st-bottom">
                         <p><span class="st-things-d">D</span><span class="st-things-i">ie</span><span class="st-things-e">d</span></p>
                     </div>
+                </div>
 
-                </div>
-                {/* </div> */}
-                <div>
-                    <button onClick={handlePlayAgain} >FIGHT AGAIN</button>
-                </div>
+            </div>
+            <div className="fight-button-container">
+                <button className="fight-button" onClick={handlePlayAgain} >FIGHT AGAIN</button>
             </div>
         </>
     );

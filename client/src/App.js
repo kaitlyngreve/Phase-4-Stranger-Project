@@ -17,6 +17,8 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
 
+  const history = useHistory()
+
   useEffect(() => {
     fetch('/me')
       .then((res) => {
@@ -91,7 +93,7 @@ function App() {
   }
 
   function handleNewTeam(character) {
-    setNewTeam(newTeam => [...newTeam, character].slice(0, 4))
+    setNewTeam(newTeam => [...newTeam, character]).slice(0, 4)
   }
 
   return (
