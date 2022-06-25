@@ -59,7 +59,7 @@ function CharacterForm({ handleNewCharacterForm }) {
                     </input>
                 </label>
                 <label>
-                    Strength:
+                    Strength (1-10):
                     <input
                         className="form-inputs"
                         type="text"
@@ -71,7 +71,7 @@ function CharacterForm({ handleNewCharacterForm }) {
                 <br></br>
                 <br></br>
                 <label>
-                    Intelligence:
+                    Intelligence (1-10):
                     <input
                         className="form-inputs"
                         type="text"

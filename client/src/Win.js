@@ -9,6 +9,7 @@ function Win() {
     function handlePlayAgain(e) {
         e.preventDefault()
         history.push("/characters")
+        window.location.reload(false)
     }
 
     return (
@@ -26,9 +27,9 @@ function Win() {
                         <span class="st-drop st-stranger-u">M</span><span class="st-stranger-o">ONSTE</span>
                         <span class="st-drop st-stranger-u">R</span></p>
                 </div>
-                <div>
-                    <button onClick={handlePlayAgain} >FIGHT AGAIN</button>
-                </div>
+            </div>
+            <div className="fight-button-container">
+                <button className="fight-button" onClick={handlePlayAgain} >FIGHT AGAIN</button>
             </div>
         </>
     );

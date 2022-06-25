@@ -5,60 +5,58 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('/images/background_dust.jpg');
-  background-size: cover;
-  background-repeat: repeat-y;
-  background-position-x: center;
-  background-position-y: 0vh;
+  background: #000;
   position: relative;
   color: #fff;
-  animation: scrollBG 50s linear 0s infinite;
   overflow-x: hidden;
 }
 
-body:before {
+body:before,
+body:after {
   content: '';
   display: block;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 200vh;
   background-image: url('/images/background_dust.jpg');
-  background-size: cover;
+  background-size: auto 50%;
   background-repeat: repeat-y;
   background-position-x: center;
   background-position-y: 0vh;
-  animation: scrollBG 67s linear 0s infinite reverse;
-  transform: scale(1.5);
   opacity: .5;
   z-index: -1;
   pointer-events: none;
 }
 
-/* Background filter to dim the image */
-body:after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .2);
-  z-index: -1;
-  pointer-events: none;
+body:before {
+  animation: scrollBG 67s linear 0s infinite;
 }
 
-/* @keyframes scrollBG {
+body:after {
+  animation: scrollBGlarge 55s linear 0s infinite reverse;
+}
+
+@keyframes scrollBG {
   0% {
-    background-position-y: 0vh;
+    transform: translate3d(0, 0, 0);
   }
 
   100% {
-    background-position-y: 100vh;
+    transform: translate3d(0, -100vh, 0);
   }
-} */
+}
+
+@keyframes scrollBGlarge {
+  0% {
+    transform: translate3d(0, 0, 0) scale3d(1.3, 1.3, 1.3);
+  }
+
+  100% {
+    transform: translate3d(0, -100vh, 0) scale3d(1.3, 1.3, 1.3);
+  }
+}
 
 .App {
   max-width: 800px;
@@ -77,7 +75,7 @@ code {
 }
 
 .character-card-container {
-
+  padding-bottom: 15px;
   border-radius: 15px;
   overflow: hidden;
   justify-content: center;
@@ -101,9 +99,14 @@ img.character-card {
 .character-card-selected {
   width: 100%;
   height: 100%;
-  border-radius: 5%;
-  border: solid tomato;
-  border-width: 3px;
+  border-width: 12px;
+  box-shadow: -0.1rem -0.1rem 1.5px #ed2b12,
+    0.1rem -0.1rem 1.5px #ed2b12,
+    -0.1rem 0.1rem 1.5px #ed2b12,
+    0.1rem 0.1rem 1.5px #ed2b12,
+    0 0 20px #630100,
+    0 0 25px #450100;
+  ;
 }
 
 img.character-card-selected {
@@ -132,6 +135,14 @@ img.character-card-selected {
   justify-content: center;
 }
 
+.monster-card {
+  text-align: center;
+}
+
+.description-monster {
+  width: 110%;
+}
+
 .multi-purpose-button {
   cursor: pointer;
   background: none;
@@ -155,12 +166,38 @@ img.character-card-selected {
   font-size: 13px;
 }
 
+.multi-purpose-button-3 {
+  cursor: pointer;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  background: none;
+  color: #ed2b12;
+  font-family: 'ITC Benguiat W01';
+  border: none;
+  text-transform: uppercase;
+  font-size: 35px;
+}
+
+.multi-purpose-button-4 {
+  cursor: pointer;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  background: none;
+  color: #ed2b12;
+  font-family: 'ITC Benguiat W01';
+  border: none;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
 .multi-purpose-button:hover {
   cursor: pointer;
   background-color: black;
   color: #ed2b12;
   font-family: 'ITC Benguiat W01';
-  border: solid #ed2b12;
+  box-shadow: 0px 0px 5px 1px #ed2b12;
   transform: scaleY(-1);
 }
 
@@ -169,7 +206,26 @@ img.character-card-selected {
   background-color: black;
   color: #ed2b12;
   font-family: 'ITC Benguiat W01';
-  border: solid #ed2b12;
+  box-shadow: 0px 0px 5px 1px #ed2b12;
+  transform: scaleY(-1);
+}
+
+.multi-purpose-button-3:hover {
+  cursor: pointer;
+  background-color: black;
+  color: #ed2b12;
+  font-family: 'ITC Benguiat W01';
+  box-shadow: 0px 0px 5px 1px #ed2b12;
+  transform: scaleY(-1);
+  font-size: 45px;
+}
+
+.multi-purpose-button-4:hover {
+  cursor: pointer;
+  background-color: black;
+  color: #ed2b12;
+  font-family: 'ITC Benguiat W01';
+  box-shadow: 0px 0px 5px 1px #ed2b12;
   transform: scaleY(-1);
 }
 
@@ -177,8 +233,14 @@ img.character-card-selected {
   text-align: center;
 }
 
+.multi-purpose-button-container-2 {
+  text-align: center;
+  width: 100%;
+  margin-top: 400px;
+}
+
 .st-character-title {
-  margin-bottom: 60px;
+  margin-bottom: 15px;
   padding: 14px;
   /* text-align: center; */
   text-transform: uppercase;
@@ -212,10 +274,11 @@ img.character-card-selected {
 }
 
 .st-character-title-container {
-  width: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  line-height: .3px;
+  line-height: 1em;
+  text-align: center;
 }
 
 .instructions-header {
@@ -249,39 +312,6 @@ img.character-card-selected {
   background-color: none;
   font-size: 18px;
 }
-
-/* .form-button {
-  width: 30%;
-  height: 35px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: 'ITC Benguiat W01';
-  border: solid #630100;
-  border-width: 2px;
-  border-radius: 20px;
-  background: none;
-  color: white;
-}
-
-.form-button:hover {
-  cursor: pointer;
-  width: 30%;
-  height: 35px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  border: none;
-  font-family: 'ITC Benguiat W01';
-  background: none;
-  color: black;
-  text-shadow: -0.05rem -0.05rem 1px #ed2b12,
-    0.05rem -0.05rem 1px #ed2b12,
-    -0.05rem 0.05rem 1px #ed2b12,
-    0.05rem 0.05rem 1px #ed2b12,
-    0 0 15px #630100,
-    0 0 20px #450100;
-} */
 
 .form-header {
   text-align: center;
@@ -383,8 +413,8 @@ form input {
 .fight-button {
   font-family: 'ITC Benguiat W01';
   font-size: 50px;
-  width: 100%;
-  margin: 130px;
+  height: 400px;
+  width: 400px;
   border: none;
   border-radius: 5px;
   background: none;
@@ -392,9 +422,10 @@ form input {
   margin-left: auto;
   margin-right: auto;
   text-transform: uppercase;
+  transition: all .3s;
 }
 
-.fight-button:hover {
+.fight-button-container:hover .fight-button {
   cursor: pointer;
   color: black;
   text-shadow: -0.03rem -0.03rem .9px #ed2b12,
@@ -404,27 +435,21 @@ form input {
     0 0 15px #630100,
     0 0 20px #450100;
   transform: scaleY(-1);
+  border-width: 6px;
+  box-shadow: -0.1rem -0.1rem 1.5px #ed2b12, 0.1rem -0.1rem 1.5px #ed2b12, -0.1rem 0.1rem 1.5px #ed2b12, 0.1rem 0.1rem 1.5px #ed2b12, 0 0 20px #630100, 0 0 25px #450100;
+  border-radius: 50%;
 }
 
 .fight-button-container {
   margin: 90px;
-  height: 400px;
-  width: 400px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+  width: fit-content;
 }
 
-.fight-button-container:hover {
-  border-width: 6px;
-  box-shadow: -0.1rem -0.1rem 1.5px #ed2b12,
-    0.1rem -0.1rem 1.5px #ed2b12,
-    -0.1rem 0.1rem 1.5px #ed2b12,
-    0.1rem 0.1rem 1.5px #ed2b12,
-    0 0 20px #630100,
-    0 0 25px #450100;
-  ;
-  border-radius: 50%;
-  background: black;
+.attack-div {
+  text-align: center;
 }
 
 h2 {
@@ -557,6 +582,23 @@ h2 {
   letter-spacing: -2px;
 }
 
+.st-stranger-text-2 {
+  text-align: center;
+  padding: 15px;
+  letter-spacing: 0;
+  font-size: 1.7rem;
+  font-family: 'ITC Benguiat W01';
+  font-weight: 800;
+  color: #1c0502;
+  text-shadow: -0.05rem -0.05rem 1px #ed2b12,
+    0.05rem -0.05rem 1px #ed2b12,
+    -0.05rem 0.05rem 1px #ed2b12,
+    0.05rem 0.05rem 1px #ed2b12,
+    0 0 15px #630100,
+    0 0 20px #450100;
+  letter-spacing: -2px;
+}
+
 /*background for win*/
 .win {
   /* overflow: overlay; */
@@ -639,11 +681,9 @@ h2 {
 .fight-character-cards-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-row-gap: 20px;
   grid-column-gap: 20px;
   justify-content: center;
-  /* margin-bottom: -5rem; */
 }
 
 .button-fight {
