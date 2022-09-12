@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   resources :monsters, only: [:index, :show, :destroy]
   resources :teams
 
-  post '/signup', to: 'users#create'
-  get '/me', to: 'users#show'
-  get '/users', to: 'users#index'
-  post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+  # post '/signup', to: 'users#create'
+  # get '/me', to: 'users#show'
+  # get '/users', to: 'users#index'
+  # post '/login', to: 'sessions#create'
+  # delete '/logout', to: 'sessions#destroy'
 
   get '/hello', to: 'application#hello_world'
 

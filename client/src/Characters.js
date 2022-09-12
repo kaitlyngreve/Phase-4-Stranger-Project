@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import CharacterCard from "./CharacterCard";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import CharacterForm from "./CharacterForm";
 
 
@@ -10,11 +10,11 @@ function Characters({ characters, teams, handleChangeTeam, handleNewTeam, newTea
 
     let team_id = teams.map(team => team.id)
 
-    const history = useHistory()
+    // const history = useHistory()
 
     function handleTeamClick(e) {
         e.preventDefault()
-        history.push("/monster_fights")
+        window.location.replace("/monster_fights")
     }
 
 

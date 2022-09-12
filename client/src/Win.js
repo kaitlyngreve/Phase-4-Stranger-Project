@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 // import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 function Win() {
 
-    const history = useHistory()
+    // const history = useHistory()
 
     function handlePlayAgain(e) {
         e.preventDefault()
-        history.push("/characters")
-        window.location.reload(false)
+        window.location.replace("/characters")
+        // window.location.reload(false)
     }
 
     return (

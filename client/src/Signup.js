@@ -2,32 +2,32 @@ import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 function SignUp({ onLogin }) {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [passwordConfirmation, setPasswordConfirmation] = useState("");
+    // const [username, setUsername] = useState("");
+    // const [password, setPassword] = useState("");
+    // const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        fetch("/signup", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                username,
-                password,
-                password_confirmation: passwordConfirmation,
-            }),
-        })
-            .then((r) => r.json())
-            .then(history.push("/characters"));
-    }
+    // function handleSubmit(e) {
+    //     e.preventDefault();
+    //     fetch("/signup", {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify({
+    //             username,
+    //             password,
+    //             password_confirmation: passwordConfirmation,
+    //         }),
+    //     })
+    //         .then((r) => r.json())
+    //         .then(history.push("/characters"));
+    // }
 
-    const history = useHistory()
+    // const history = useHistory()
 
     return (
         <div className='signup'>
-            <form onSubmit={handleSubmit} className="st-stranger-text">
+            {/* <form onSubmit={handleSubmit} className="st-stranger-text">
                 <label htmlFor="username" className="username-1">Username:  </label>
                 <input
                     type="text"
@@ -52,7 +52,7 @@ function SignUp({ onLogin }) {
                     onChange={(e) => setPasswordConfirmation(e.target.value)}
                 />
                 <button type="submit" className="multi-purpose-button"> Submit </button><br></br>
-            </form>
+            </form> */}
         </div>
     );
 }
