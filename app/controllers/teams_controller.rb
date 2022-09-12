@@ -16,6 +16,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_invalid_response
         team = Team.create!(team_params)
         render json: team, status: :created
     end
+    # probably don't need create for teams?
 
     def update
         team = Team.find_by(id: params[:id])
