@@ -3,7 +3,7 @@ import MonsterCard from "./MonsterCard"
 import NewTeamCard from "./NewTeamCard";
 import Win from "./Win";
 import Lose from "./Lose";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 // import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function Monsters({ monsters, newTeam }) {
@@ -14,10 +14,10 @@ function Monsters({ monsters, newTeam }) {
         setIsAttack(isAttack => !isAttack)
     }
 
-    const history = useHistory()
+    // const history = useHistory()
 
     function handleHiddenButton(e) {
-        { results !== "Monster Wins" ? history.push("/win") : history.push("/lose") }
+        { results !== "Monster Wins" ? window.location.replace("/win") : window.location.replace("/lose") }
     }
 
 

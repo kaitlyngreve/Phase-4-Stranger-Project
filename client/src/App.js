@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Characters from "./Characters";
-import SignUp from "./Signup";
-import Login from "./Login";
-import { useHistory } from "react-router-dom";
+// import SignUp from "./Signup";
+// import Login from "./Login";
+// import { useHistory } from "react-router-dom";
 import Monsters from "./Monsters";
 import Win from "./Win";
 import Lose from "./Lose"
@@ -14,22 +14,22 @@ function App() {
   const [newTeam, setNewTeam] = useState([])
   const [monsters, setMonsters] = useState([])
 
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
-  const [user, setUser] = useState(null)
+  // const [isAuthenticated, setIsAuthenticated] = useState(false)
+  // const [user, setUser] = useState(null)
 
-  const history = useHistory()
+  // const history = useHistory()
 
   useEffect(() => {
-    fetch('/me')
-      .then((res) => {
-        if (res.ok) {
-          res.json()
-            .then((user) => {
-              setIsAuthenticated(true);
-              setUser(user);
-            });
-        }
-      });
+    // fetch('/me')
+    //   .then((res) => {
+    //     if (res.ok) {
+    //       res.json()
+    //         .then((user) => {
+    //           setIsAuthenticated(true);
+    //           setUser(user);
+    //         });
+    //     }
+    //   });
 
     fetch('/characters')
       .then(res => res.json())
@@ -55,7 +55,7 @@ function App() {
       .then((team) => setTeams(team));
   }, []);
 
-  if (!isAuthenticated) return <Login error={'please log in'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />
+  // if (!isAuthenticated) return <Login error={'please log in'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />
 
   const handleNewCharacterForm = (data) => {
     setCharacters([...characters, data])
@@ -100,13 +100,13 @@ function App() {
     < BrowserRouter >
       <div className="App">
         <Switch>
-          <Route exact path="/">
+          {/* <Route exact path="/">
             <Login />
           </Route>
           <Route exact path="/signup">
             <SignUp />
-          </Route>
-          <Route exact path="/characters">
+          </Route> */}
+          <Route exact path="/">
             <Characters handleDeleteCharacter={handleDeleteCharacter} characters={characters} teams={teams} handleChangeTeam={handleChangeTeam} handleNewTeam={handleNewTeam} newTeam={newTeam} handleNewCharacterForm={handleNewCharacterForm} />
           </Route>
           <Route exact path="/teams">

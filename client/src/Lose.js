@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 // import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+
 
 function Lose() {
-    const history = useHistory()
+ 
 
     function handlePlayAgain(e) {
         e.preventDefault()
-        history.push("/characters")
-        window.location.reload(false)
+        window.location.replace("/characters")
+        // window.location.reload(false)
     }
 
     return (
