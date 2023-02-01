@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 // import { BrowserRouter, Switch, Route } from "react-router-dom";
 // import { useHistory } from "react-router-dom";
 
 function Win() {
-  const history = useHistory();
+  // const history = useHistory();
 
   // const history = useHistory()
 

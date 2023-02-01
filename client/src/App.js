@@ -70,7 +70,7 @@ function App() {
     setCharacters(filteredChar);
   };
 
-  let character = characters.map((character) => character);
+  // let character = characters.map((character) => character);
 
   function handleChangeTeam(e, team_id) {
     console.log(e.target.value);
@@ -80,7 +80,7 @@ function App() {
       team_id: myTeam[0].id,
     };
     newTeam.map((character) => {
-      fetch(`/characters/${character.id}`, {
+      return fetch(`/characters/${character.id}`, {
         method: "PATCH",
         headers: {
           "Content-type": "application/json",

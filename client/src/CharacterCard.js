@@ -1,12 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-function CharacterCard({
-  character,
-  handleDeleteCharacter,
-  handleNewTeam,
-  filteredCharacters,
-}) {
-  const [monsterId, setMonsterId] = useState();
+function CharacterCard({ character, handleDeleteCharacter, handleNewTeam }) {
+  // const [monsterId, setMonsterId] = useState();
   const [isSelected, setIsSelected] = useState(false);
 
   const handleOutline = () => {
@@ -33,6 +28,7 @@ function CharacterCard({
           className={isSelected ? "character-card-selected" : "character-card"}
           src={character.image}
           onClick={handleOutline}
+          alt="character"
         />
         <div className="multi-purpose-button-container">
           <button

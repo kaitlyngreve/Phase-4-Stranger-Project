@@ -1,18 +1,21 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 // import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function NewTeamCard({ teamMember }) {
-    // let teamMember = newTeam.map((teamMember) => teamMember)
-    console.log(teamMember)
+  // let teamMember = newTeam.map((teamMember) => teamMember)
+  console.log(teamMember);
 
-    return (
-        <>
-            <div className="character-card-container" >
-                <img className="character-card" src={teamMember.image} />
-            </div>
-        </>
-    );
+  return (
+    <>
+      <div className="character-card-container">
+        <img
+          className="character-card"
+          src={teamMember.image}
+          alt="character team"
+        />
+      </div>
+    </>
+  );
 }
-
 
 export default NewTeamCard;
