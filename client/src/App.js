@@ -3,11 +3,9 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Characters from "./Characters";
 // import SignUp from "./Signup";
 // import Login from "./Login";
-<<<<<<< HEAD
+
 // import { useHistory } from "react-router-dom";
-=======
-import { useHistory } from "react-router-dom";
->>>>>>> db1eb105 (taking auth out)
+
 import Monsters from "./Monsters";
 import Win from "./Win";
 import Lose from "./Lose";
@@ -18,7 +16,6 @@ function App() {
   const [newTeam, setNewTeam] = useState([]);
   const [monsters, setMonsters] = useState([]);
 
-<<<<<<< HEAD
   // const [isAuthenticated, setIsAuthenticated] = useState(false)
   // const [user, setUser] = useState(null)
 
@@ -36,36 +33,9 @@ function App() {
     //     }
     //   });
 
-    fetch('/characters')
-      .then(res => res.json())
-      .then(setCharacters);
-
-=======
-  // const [isAuthenticated, setIsAuthenticated] = useState(false);
-  // const [user, setUser] = useState(null);
-
-  const history = useHistory();
-
-  // useEffect(() => {
-  //   fetch("/me").then((res) => {
-  //     if (res.ok) {
-  //       res.json().then((user) => {
-  //         setIsAuthenticated(true);
-  //         setUser(user);
-  //       });
-  //     }
-  //   });
-
-  //   fetch("/characters")
-  //     .then((res) => res.json())
-  //     .then(setCharacters);
-  // }, []);
-
-  useEffect(() => {
     fetch("/characters")
-      .then((r) => r.json())
-      .then((data) => setMonsters(data));
->>>>>>> db1eb105 (taking auth out)
+      .then((res) => res.json())
+      .then(setCharacters);
   }, []);
 
   useEffect(() => {
@@ -86,18 +56,7 @@ function App() {
       .then((team) => setTeams(team));
   }, []);
 
-<<<<<<< HEAD
   // if (!isAuthenticated) return <Login error={'please log in'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />
-=======
-  // if (!isAuthenticated)
-  //   return (
-  //     <Login
-  //       error={"please log in"}
-  //       setIsAuthenticated={setIsAuthenticated}
-  //       setUser={setUser}
-  //     />
-  //   );
->>>>>>> db1eb105 (taking auth out)
 
   const handleNewCharacterForm = (data) => {
     setCharacters([...characters, data]);
@@ -148,9 +107,6 @@ function App() {
             <SignUp />
           </Route> */}
           <Route exact path="/">
-<<<<<<< HEAD
-            <Characters handleDeleteCharacter={handleDeleteCharacter} characters={characters} teams={teams} handleChangeTeam={handleChangeTeam} handleNewTeam={handleNewTeam} newTeam={newTeam} handleNewCharacterForm={handleNewCharacterForm} />
-=======
             <Characters
               handleDeleteCharacter={handleDeleteCharacter}
               characters={characters}
@@ -160,7 +116,6 @@ function App() {
               newTeam={newTeam}
               handleNewCharacterForm={handleNewCharacterForm}
             />
->>>>>>> db1eb105 (taking auth out)
           </Route>
           <Route exact path="/teams">
             <h1>Teams Count: </h1>
