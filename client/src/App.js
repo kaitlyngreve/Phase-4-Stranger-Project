@@ -1,11 +1,6 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Characters from "./Characters";
-// import SignUp from "./Signup";
-// import Login from "./Login";
-
-// import { useHistory } from "react-router-dom";
-
 import Monsters from "./Monsters";
 import Win from "./Win";
 import Lose from "./Lose";
@@ -16,23 +11,7 @@ function App() {
   const [newTeam, setNewTeam] = useState([]);
   const [monsters, setMonsters] = useState([]);
 
-  // const [isAuthenticated, setIsAuthenticated] = useState(false)
-  // const [user, setUser] = useState(null)
-
-  // const history = useHistory()
-
   useEffect(() => {
-    // fetch('/me')
-    //   .then((res) => {
-    //     if (res.ok) {
-    //       res.json()
-    //         .then((user) => {
-    //           setIsAuthenticated(true);
-    //           setUser(user);
-    //         });
-    //     }
-    //   });
-
     fetch("/characters")
       .then((res) => res.json())
       .then(setCharacters);
@@ -44,19 +23,11 @@ function App() {
       .then((data) => setMonsters(data));
   }, []);
 
-  // useEffect(() => {
-  //   fetch("/characters")
-  //     .then((r) => r.json())
-  //     .then((data) => setCharacters(data));
-  // }, []);
-
   useEffect(() => {
     fetch("/teams")
       .then((r) => r.json())
       .then((team) => setTeams(team));
   }, []);
-
-  // if (!isAuthenticated) return <Login error={'please log in'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />
 
   const handleNewCharacterForm = (data) => {
     setCharacters([...characters, data]);
@@ -69,8 +40,6 @@ function App() {
     );
     setCharacters(filteredChar);
   };
-
-  // let character = characters.map((character) => character);
 
   function handleChangeTeam(e, team_id) {
     console.log(e.target.value);
@@ -100,12 +69,6 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Switch>
-          {/* <Route exact path="/">
-            <Login />
-          </Route>
-          <Route exact path="/signup">
-            <SignUp />
-          </Route> */}
           <Route exact path="/">
             <Characters
               handleDeleteCharacter={handleDeleteCharacter}

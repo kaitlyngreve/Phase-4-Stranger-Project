@@ -1,7 +1,5 @@
 import { useState } from "react";
-// import { BrowserRouter, Switch, Route } from "react-router-dom";
 import CharacterCard from "./CharacterCard";
-// import { useHistory } from "react-router-dom";
 import CharacterForm from "./CharacterForm";
 
 function Characters({
@@ -18,8 +16,6 @@ function Characters({
   const [selectedTeamName, setSelectedTeamName] = useState("");
 
   let team_id = teams.map((team) => team.id);
-
-  // const history = useHistory()
 
   function handleTeamClick(e) {
     e.preventDefault();

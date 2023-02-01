@@ -1,8 +1,4 @@
-// import { useState, useEffect } from "react";
-// import { BrowserRouter, Switch, Route } from "react-router-dom";
-
 function NewTeamCard({ teamMember }) {
-  // let teamMember = newTeam.map((teamMember) => teamMember)
   console.log(teamMember);
 
   return (

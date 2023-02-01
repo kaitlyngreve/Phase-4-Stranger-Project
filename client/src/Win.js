@@ -1,16 +1,7 @@
-// import { useState, useEffect } from "react";
-// import { BrowserRouter, Switch, Route } from "react-router-dom";
-// import { useHistory } from "react-router-dom";
-
 function Win() {
-  // const history = useHistory();
-
-  // const history = useHistory()
-
   function handlePlayAgain(e) {
     e.preventDefault();
     window.location.replace("/characters");
-    // window.location.reload(false)
   }
 
   return (
@@ -24,7 +15,6 @@ function Win() {
             <span class="st-drop st-stranger-u">D</span>{" "}
             <span class="st-stranger-o">EFEATE</span>
             <span class="st-drop st-stranger-u">D</span>
-            {/* <h1>YOU DIE</h1> */}
           </p>
         </div>
         <div class="st-stranger-text">

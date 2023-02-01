@@ -1,11 +1,7 @@
-// import { useState, useEffect } from "react";
-// import { BrowserRouter, Switch, Route } from "react-router-dom";
-
 function Lose() {
   function handlePlayAgain(e) {
     e.preventDefault();
     window.location.replace("/characters");
-    // window.location.reload(false)
   }
 
   return (
@@ -18,7 +14,6 @@ function Lose() {
               <span class="st-drop st-stranger-y">Y</span>
               <span class="st-stranger-o">ou hav</span>
               <span class="st-drop st-stranger-u">e</span>
-              {/* <h1>YOU DIE</h1> */}
             </p>
             <div class="st-bound st-bound-mini st-bound-left"></div>
             <div class="st-bound st-bound-mini st-bound-right"></div>

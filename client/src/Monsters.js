@@ -1,10 +1,6 @@
 import { useState } from "react";
 import MonsterCard from "./MonsterCard";
 import NewTeamCard from "./NewTeamCard";
-// import Win from "./Win";
-// import Lose from "./Lose";
-// import { useHistory } from "react-router-dom";
-// import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function Monsters({ monsters, newTeam }) {
   const [results, setResults] = useState("");
@@ -13,8 +9,6 @@ function Monsters({ monsters, newTeam }) {
   const handleAttack = () => {
     setIsAttack((isAttack) => !isAttack);
   };
-
-  // const history = useHistory()
 
   function handleHiddenButton(e) {
     results !== "Monster Wins"

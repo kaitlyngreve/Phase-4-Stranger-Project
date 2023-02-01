@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 function CharacterCard({ character, handleDeleteCharacter, handleNewTeam }) {
-  // const [monsterId, setMonsterId] = useState();
   const [isSelected, setIsSelected] = useState(false);
 
   const handleOutline = () => {
@@ -22,8 +21,6 @@ function CharacterCard({ character, handleDeleteCharacter, handleNewTeam }) {
         className="character-card-container"
         onClick={() => handleNewTeam(character)}
       >
-        {/* <h2 className="character-card" id="character-name">{character.name}</h2>
-                <h1 className="character-card">{character.age}</h1> */}
         <img
           className={isSelected ? "character-card-selected" : "character-card"}
           src={character.image}

@@ -1,7 +1,4 @@
-// import { useState, useEffect } from "react";
-// import { BrowserRouter, Switch, Route } from "react-router-dom";
-
-function MonsterCard({ monster, handleHiddenButton, handleResults }) {
+function MonsterCard({ monster }) {
   return (
     <>
       <div className="monster-card">
