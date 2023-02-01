@@ -3,17 +3,22 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Characters from "./Characters";
 // import SignUp from "./Signup";
 // import Login from "./Login";
+<<<<<<< HEAD
 // import { useHistory } from "react-router-dom";
+=======
+import { useHistory } from "react-router-dom";
+>>>>>>> db1eb105 (taking auth out)
 import Monsters from "./Monsters";
 import Win from "./Win";
-import Lose from "./Lose"
+import Lose from "./Lose";
 
 function App() {
-  const [characters, setCharacters] = useState([])
-  const [teams, setTeams] = useState([])
-  const [newTeam, setNewTeam] = useState([])
-  const [monsters, setMonsters] = useState([])
+  const [characters, setCharacters] = useState([]);
+  const [teams, setTeams] = useState([]);
+  const [newTeam, setNewTeam] = useState([]);
+  const [monsters, setMonsters] = useState([]);
 
+<<<<<<< HEAD
   // const [isAuthenticated, setIsAuthenticated] = useState(false)
   // const [user, setUser] = useState(null)
 
@@ -35,6 +40,32 @@ function App() {
       .then(res => res.json())
       .then(setCharacters);
 
+=======
+  // const [isAuthenticated, setIsAuthenticated] = useState(false);
+  // const [user, setUser] = useState(null);
+
+  const history = useHistory();
+
+  // useEffect(() => {
+  //   fetch("/me").then((res) => {
+  //     if (res.ok) {
+  //       res.json().then((user) => {
+  //         setIsAuthenticated(true);
+  //         setUser(user);
+  //       });
+  //     }
+  //   });
+
+  //   fetch("/characters")
+  //     .then((res) => res.json())
+  //     .then(setCharacters);
+  // }, []);
+
+  useEffect(() => {
+    fetch("/characters")
+      .then((r) => r.json())
+      .then((data) => setMonsters(data));
+>>>>>>> db1eb105 (taking auth out)
   }, []);
 
   useEffect(() => {
@@ -43,11 +74,11 @@ function App() {
       .then((data) => setMonsters(data));
   }, []);
 
-  useEffect(() => {
-    fetch("/characters")
-      .then((r) => r.json())
-      .then((data) => setCharacters(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch("/characters")
+  //     .then((r) => r.json())
+  //     .then((data) => setCharacters(data));
+  // }, []);
 
   useEffect(() => {
     fetch("/teams")
@@ -55,49 +86,59 @@ function App() {
       .then((team) => setTeams(team));
   }, []);
 
+<<<<<<< HEAD
   // if (!isAuthenticated) return <Login error={'please log in'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />
+=======
+  // if (!isAuthenticated)
+  //   return (
+  //     <Login
+  //       error={"please log in"}
+  //       setIsAuthenticated={setIsAuthenticated}
+  //       setUser={setUser}
+  //     />
+  //   );
+>>>>>>> db1eb105 (taking auth out)
 
   const handleNewCharacterForm = (data) => {
-    setCharacters([...characters, data])
-  }
+    setCharacters([...characters, data]);
+  };
 
   const handleDeleteCharacter = (char) => {
-    console.log(char)
-    let filteredChar = characters.filter(character => character.id !== char.id)
-    setCharacters(filteredChar)
-  }
+    console.log(char);
+    let filteredChar = characters.filter(
+      (character) => character.id !== char.id
+    );
+    setCharacters(filteredChar);
+  };
 
-  let character = characters.map((character) => character)
+  let character = characters.map((character) => character);
 
   function handleChangeTeam(e, team_id) {
-    console.log(e.target.value)
-    let myTeam = teams.filter(team => team.team_name === e.target.value)
-    console.log(myTeam[0].id)
+    console.log(e.target.value);
+    let myTeam = teams.filter((team) => team.team_name === e.target.value);
+    console.log(myTeam[0].id);
     const updatedCharacter = {
-      team_id: myTeam[0].id
-    }
-    newTeam.map(character => {
+      team_id: myTeam[0].id,
+    };
+    newTeam.map((character) => {
       fetch(`/characters/${character.id}`, {
-        method: 'PATCH',
+        method: "PATCH",
         headers: {
-          'Content-type': 'application/json'
+          "Content-type": "application/json",
         },
-        body: JSON.stringify(
-          updatedCharacter
-        ),
+        body: JSON.stringify(updatedCharacter),
       })
-        .then(r => r.json())
-        .then(data => console.log('response', data))
-    }
-    )
+        .then((r) => r.json())
+        .then((data) => console.log("response", data));
+    });
   }
 
   function handleNewTeam(character) {
-    setNewTeam(newTeam => [...newTeam, character]).slice(0, 4)
+    setNewTeam((newTeam) => [...newTeam, character]).slice(0, 4);
   }
 
   return (
-    < BrowserRouter >
+    <BrowserRouter>
       <div className="App">
         <Switch>
           {/* <Route exact path="/">
@@ -107,7 +148,19 @@ function App() {
             <SignUp />
           </Route> */}
           <Route exact path="/">
+<<<<<<< HEAD
             <Characters handleDeleteCharacter={handleDeleteCharacter} characters={characters} teams={teams} handleChangeTeam={handleChangeTeam} handleNewTeam={handleNewTeam} newTeam={newTeam} handleNewCharacterForm={handleNewCharacterForm} />
+=======
+            <Characters
+              handleDeleteCharacter={handleDeleteCharacter}
+              characters={characters}
+              teams={teams}
+              handleChangeTeam={handleChangeTeam}
+              handleNewTeam={handleNewTeam}
+              newTeam={newTeam}
+              handleNewCharacterForm={handleNewCharacterForm}
+            />
+>>>>>>> db1eb105 (taking auth out)
           </Route>
           <Route exact path="/teams">
             <h1>Teams Count: </h1>
@@ -123,9 +176,8 @@ function App() {
           </Route>
         </Switch>
       </div>
-    </BrowserRouter >
+    </BrowserRouter>
   );
 }
-
 
 export default App;
